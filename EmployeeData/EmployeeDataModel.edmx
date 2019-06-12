@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EmployeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Employee.dbo.EMP_Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EMP_Details">
+          <Key>
+            <PropertyRef Name="EMPID" />
+            <PropertyRef Name="EMPNAME" />
+          </Key>
+          <Property Name="EMPID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMPNAME" Type="varchar" MaxLength="750" Nullable="false" />
+          <Property Name="EMPADDRESS" Type="varchar" MaxLength="950" />
+          <Property Name="EMPTELEPHONE" Type="int" />
+          <Property Name="EMPDOB" Type="date" />
+        </EntityType>
+        <EntityContainer Name="EmployeeModelStoreContainer">
+          <EntitySet Name="EMP_Details" EntityType="Self.EMP_Details" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EMP_Details].[EMPID] AS [EMPID], 
+    [EMP_Details].[EMPNAME] AS [EMPNAME], 
+    [EMP_Details].[EMPADDRESS] AS [EMPADDRESS], 
+    [EMP_Details].[EMPTELEPHONE] AS [EMPTELEPHONE], 
+    [EMP_Details].[EMPDOB] AS [EMPDOB]
+    FROM [dbo].[EMP_Details] AS [EMP_Details]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmployeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EMP_Details">
+          <Key>
+            <PropertyRef Name="EMPID" />
+            <PropertyRef Name="EMPNAME" />
+          </Key>
+          <Property Name="EMPID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMPNAME" Type="String" MaxLength="750" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMPADDRESS" Type="String" MaxLength="950" FixedLength="false" Unicode="false" />
+          <Property Name="EMPTELEPHONE" Type="Int32" />
+          <Property Name="EMPDOB" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="EmployeeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EMP_Details" EntityType="Self.EMP_Details" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeeModelStoreContainer" CdmEntityContainer="EmployeeEntities">
+          <EntitySetMapping Name="EMP_Details">
+            <EntityTypeMapping TypeName="EmployeeModel.EMP_Details">
+              <MappingFragment StoreEntitySet="EMP_Details">
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+                <ScalarProperty Name="EMPNAME" ColumnName="EMPNAME" />
+                <ScalarProperty Name="EMPADDRESS" ColumnName="EMPADDRESS" />
+                <ScalarProperty Name="EMPTELEPHONE" ColumnName="EMPTELEPHONE" />
+                <ScalarProperty Name="EMPDOB" ColumnName="EMPDOB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

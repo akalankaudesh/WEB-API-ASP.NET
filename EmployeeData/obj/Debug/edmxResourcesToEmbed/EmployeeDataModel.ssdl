@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Employee.dbo.EMP_Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EMP_Details">
+    <Key>
+      <PropertyRef Name="EMPID" />
+      <PropertyRef Name="EMPNAME" />
+    </Key>
+    <Property Name="EMPID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMPNAME" Type="varchar" MaxLength="750" Nullable="false" />
+    <Property Name="EMPADDRESS" Type="varchar" MaxLength="950" />
+    <Property Name="EMPTELEPHONE" Type="int" />
+    <Property Name="EMPDOB" Type="date" />
+  </EntityType>
+  <EntityContainer Name="EmployeeModelStoreContainer">
+    <EntitySet Name="EMP_Details" EntityType="Self.EMP_Details" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EMP_Details].[EMPID] AS [EMPID], 
+    [EMP_Details].[EMPNAME] AS [EMPNAME], 
+    [EMP_Details].[EMPADDRESS] AS [EMPADDRESS], 
+    [EMP_Details].[EMPTELEPHONE] AS [EMPTELEPHONE], 
+    [EMP_Details].[EMPDOB] AS [EMPDOB]
+    FROM [dbo].[EMP_Details] AS [EMP_Details]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

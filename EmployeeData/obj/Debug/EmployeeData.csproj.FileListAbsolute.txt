@@ -1,0 +1,10 @@
+D:\web-mvc\WebApplication2\EmployeeData\bin\Debug\EmployeeData.dll.config
+D:\web-mvc\WebApplication2\EmployeeData\bin\Debug\EmployeeData.dll
+D:\web-mvc\WebApplication2\EmployeeData\bin\Debug\EmployeeData.pdb
+D:\web-mvc\WebApplication2\EmployeeData\bin\Debug\EntityFramework.dll
+D:\web-mvc\WebApplication2\EmployeeData\bin\Debug\EntityFramework.SqlServer.dll
+D:\web-mvc\WebApplication2\EmployeeData\bin\Debug\EntityFramework.xml
+D:\web-mvc\WebApplication2\EmployeeData\bin\Debug\EntityFramework.SqlServer.xml
+D:\web-mvc\WebApplication2\EmployeeData\obj\Debug\EmployeeData.csprojResolveAssemblyReference.cache
+D:\web-mvc\WebApplication2\EmployeeData\obj\Debug\EmployeeData.dll
+D:\web-mvc\WebApplication2\EmployeeData\obj\Debug\EmployeeData.pdb
